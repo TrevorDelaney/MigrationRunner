@@ -80,9 +80,13 @@ namespace MigrationRunner
                 {
                     using (var processor = factory.Create(connectionString, announcer, options))
                     {
-                        btnMigrationUp.Text = @"Running..";
-                        this.Enable(false);
-                        txtOutput.Enabled = true;
+                        this.BeginInvoke(new Action(() =>
+                        {
+                            btnMigrationUp.Text = @"Running..";
+                            this.Enable(false);
+                            txtOutput.Enabled = true;
+                        }));
+
                         var runner = new FluentMigrator.Runner.MigrationRunner(assembly, migrationContext, processor);
                         runner.MigrateUp(true);
                     }
@@ -90,17 +94,25 @@ namespace MigrationRunner
                 });
                 task.ContinueWith((success) =>
                 {
-                    btnMigrationUp.Text = @"Migration Up";
-                    this.Enable(true);
-                    MessageBox.Show(@"Database Migrate succeeded!!", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    txtOutput.Text += @"Succeeded!!";
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        btnMigrationUp.Text = @"Migration Up";
+                        this.Enable(true);
+                        MessageBox.Show(@"Database Migrate succeeded!!", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        txtOutput.Text += @"Succeeded!!";
+                    }));
+
                 }, TaskContinuationOptions.NotOnFaulted);
                 task.ContinueWith((fault) =>
                {
-                   btnMigrationUp.Text = @"Migration Up";
-                   this.Enable(true);
-                   MessageBox.Show($@"Database Migrate failed with {fault?.Exception?.Message}!!", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   txtOutput.Text += $@"Failed!! {Environment.NewLine} {fault?.Exception?.Message} {Environment.NewLine} {fault?.Exception?.InnerException?.Message}";
+                   this.BeginInvoke(new Action(() =>
+                   {
+                       btnMigrationUp.Text = @"Migration Up";
+                       this.Enable(true);
+                       MessageBox.Show($@"Database Migrate failed with {fault?.Exception?.Message}!!", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       txtOutput.Text += $@"Failed!! {Environment.NewLine} {fault?.Exception?.Message} {Environment.NewLine} {fault?.Exception?.InnerException?.Message}";
+                   }));
+
                }, TaskContinuationOptions.OnlyOnFaulted);
 
             }
