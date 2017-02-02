@@ -3,4 +3,6 @@
 
 # MigrationRunner
 
-MigrationRunner GUI application for migration runs manually 
+MigrationRunner GUI application for FluentMigrator migration runs manually 
+
+![screenshot](screenshot.png)
