@@ -69,7 +69,7 @@ namespace MigrationRunner
             var options = new FluentMigrator.Runner.Processors.ProcessorOptions()
             {
                 PreviewOnly = false,
-                Timeout = 600
+                Timeout = new TimeSpan(0, 0, 600)
             };
 
             var connectionString = $"Data Source={_server};User ID={_user};Password={_password};Database={_database};";
