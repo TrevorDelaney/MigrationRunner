@@ -6,3 +6,5 @@
 MigrationRunner GUI application for FluentMigrator migration runs manually 
 
 ![screenshot](screenshot.png)
+
+The application requires the WebDbMigrations.dll file which can be found in the CoreAutoUpdates release.
