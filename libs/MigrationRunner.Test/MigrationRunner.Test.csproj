@@ -54,12 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MigrationRunner\MigrationRunner.csproj">
-      <Project>{5873c211-5822-41fe-b7ea-d9ef30e00a95}</Project>
-      <Name>MigrationRunner</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
