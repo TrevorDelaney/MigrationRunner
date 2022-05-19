@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationRunner", "MigrationRunner\MigrationRunner.csproj", "{5873C211-5822-41FE-B7EA-D9EF30E00A95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationRunner.Test", "libs\MigrationRunner.Test\MigrationRunner.Test.csproj", "{20CF01A9-B85A-4A08-93FB-CFE1643901DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B14C60C-0D53-442C-9160-C1D2EDAFED7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TownSuite.MigrationRunner", "TownSuite.MigrationRunner\TownSuite.MigrationRunner.csproj", "{29BF06F9-70DE-4057-AF77-1E3E99C180D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +25,15 @@ Global
 		{20CF01A9-B85A-4A08-93FB-CFE1643901DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20CF01A9-B85A-4A08-93FB-CFE1643901DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20CF01A9-B85A-4A08-93FB-CFE1643901DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BF06F9-70DE-4057-AF77-1E3E99C180D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BF06F9-70DE-4057-AF77-1E3E99C180D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BF06F9-70DE-4057-AF77-1E3E99C180D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BF06F9-70DE-4057-AF77-1E3E99C180D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C5E0B44-D6D7-4DBE-9C80-4EC3AD7149E6}
 	EndGlobalSection
 EndGlobal
